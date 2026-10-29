@@ -4,454 +4,824 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Krishna Mathur | Mechanical Engineering Portfolio | BIET Jhansi | 2027">
-<title>Krishna Mathur — Engineering Portfolio</title>
+<meta name="theme-color" content="#071321">
+<meta name="description" content="Krishna Mathur — an interactive mechanical engineering journey. BIET Jhansi, industrial training, engineering projects and leadership.">
+<title>Krishna Mathur | My Engineering Journey</title>
 <style>
 :root{
- --bg:#f3f6fb;--surface:#fff;--text:#14243b;
- --muted:#61738b;--accent:#087dbb;--line:#dce5ef;
- --hero:#08182c;--hero2:#123c61;
-}
-body.dark{
- --bg:#0b1423;--surface:#152238;--text:#eef5ff;
- --muted:#aabbd0;--accent:#5bd4ed;--line:#30435b;
+  --bg:#071321;
+  --bg2:#0c1d30;
+  --card:#12263b;
+  --text:#f0f7ff;
+  --muted:#a9bfd1;
+  --cyan:#62e3df;
+  --gold:#f4c77c;
+  --line:#34526a;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .3s,color .3s}
-button,a{font:inherit}
-button{cursor:pointer}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
 a{color:inherit}
-nav{position:sticky;top:0;z-index:20;background:#09192c;color:white;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:12px;box-shadow:0 4px 20px #0002}
-.brand{font-size:21px;font-weight:800;letter-spacing:1px}
-.navlinks{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
-.navlinks a{text-decoration:none;font-size:13px;color:#e0eaf7}
-.navlinks a:hover{color:#65d5ef}
-.iconbtn{background:#ffffff17;color:white;border:1px solid #ffffff35;padding:8px 12px;border-radius:9px}
-.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--hero),var(--hero2));color:white;padding:90px 7% 110px}
-.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #65d5ef35;border-radius:50%;right:-100px;top:50px;box-shadow:0 0 0 45px #65d5ef09,0 0 0 100px #65d5ef07;pointer-events:none}
-.hero-content{max-width:1000px;margin:auto;position:relative;z-index:1}
-.eyebrow{color:#65d5ef;font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase}
-h1{font-size:clamp(42px,7vw,78px);line-height:1.08;margin:16px 0}
-.hero p{max-width:720px;color:#d5e4f4;font-size:18px}
-.typing{color:#76e4f4;min-height:32px;font-weight:700}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:11px 18px;text-decoration:none;font-weight:700;border:1px solid transparent;background:#69d8ed;color:#092238;transition:transform .2s}
-.btn:hover{transform:translateY(-3px)}
-.btn.outline{background:transparent;border-color:#9cb7d1;color:white}
-main{max-width:1120px;margin:auto;padding:45px 20px}
-section{margin-bottom:75px;scroll-margin-top:90px}
-h2{font-size:clamp(26px,4vw,36px);margin:0 0 8px}
-.subtitle{color:var(--muted);margin:0 0 25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:23px;transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #00000012}
-.card h3{margin:4px 0 10px}
-.card p{color:var(--muted)}
-.pill{display:inline-block;background:#167cb51b;color:var(--accent);border-radius:30px;padding:5px 11px;font-size:12px;font-weight:700;margin:4px 4px 4px 0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-40px;position:relative;z-index:2}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:23px;text-align:center;box-shadow:0 8px 25px #0001}
-.stat strong{font-size:34px;color:var(--accent);display:block}
-.stat small{color:var(--muted)}
-.filters{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}
-.filter{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 16px;border-radius:25px}
-.filter.active{background:var(--accent);color:white;border-color:var(--accent)}
-.project{display:flex;flex-direction:column}
-.project .more{margin-top:auto;background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:10px;font-weight:700}
-.project[hidden]{display:none}
-.timeline{border-left:3px solid var(--accent);margin-left:12px;padding-left:25px}
-.event{position:relative;margin-bottom:16px}
-.event:before{content:"";position:absolute;left:-35px;top:25px;background:var(--accent);width:13px;height:13px;border:3px solid var(--bg);border-radius:50%}
-.event button{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:18px;border-radius:12px;font-weight:bold}
-.event .detail{display:none;padding:0 18px 16px;background:var(--surface);border-radius:0 0 12px 12px;color:var(--muted)}
-.event.open .detail{display:block}
-.skill-panel{display:none}
-.skill-panel.active{display:block}
-.skill-item{padding:10px 0;border-bottom:1px solid var(--line)}
-.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
-.modal.show{display:flex}
-.dialog{background:var(--surface);color:var(--text);border-radius:18px;padding:26px;max-width:610px;width:100%;max-height:85vh;overflow:auto}
-.close{float:right;border:0;background:var(--line);color:var(--text);border-radius:8px;padding:5px 12px}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s}
-.reveal.visible{opacity:1;transform:none}
-.floating{position:fixed;right:20px;bottom:20px;z-index:15;background:var(--accent);color:white;padding:12px 16px;border-radius:40px;text-decoration:none;box-shadow:0 5px 20px #0003}
-footer{background:#09192c;color:#e4edf8;text-align:center;padding:35px}
-footer a{color:#76dff2}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
-@media(max-width:680px){
-nav{flex-wrap:wrap}.navlinks{width:100%;justify-content:center;gap:12px}
-.hero{padding:65px 20px 85px}
-.stats{grid-template-columns:repeat(3,1fr)}
-.stat{padding:14px 5px}.stat strong{font-size:25px}.stat small{font-size:11px}
-main{padding:40px 15px}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:4px;
+}
+#scrollbar{
+  position:fixed;left:0;top:0;
+  height:4px;width:0;
+  background:var(--cyan);
+  z-index:100;
+}
+nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 5%;gap:15px;
+  background:#071321ed;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #ffffff1c;
+}
+.logo{font-weight:850;letter-spacing:1.5px;font-size:15px}
+.logo span{color:var(--cyan)}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{
+  font-size:13px;text-decoration:none;
+  color:#c9deed;
+}
+.links a:hover{color:var(--cyan)}
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:grid;place-items:center;
+  padding:90px 22px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 24%,#1b8d9955,transparent 32%),
+    radial-gradient(circle at 18% 80%,#1c416e66,transparent 38%),
+    linear-gradient(135deg,#071321,#102b45);
+}
+.hero:before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(#ffffff08 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,#000,transparent);
+  pointer-events:none;
+}
+.hero-inner{
+  width:100%;max-width:1080px;
+  position:relative;z-index:1;
+}
+.kicker{
+  color:var(--cyan);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(48px,8.5vw,104px);
+  line-height:1.04;
+  letter-spacing:-3px;
+  margin:18px 0;
+}
+h1 em{font-style:normal;color:var(--cyan)}
+.hero p{
+  max-width:690px;
+  color:#cadbea;
+  font-size:clamp(16px,2vw,20px);
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin:24px 0;
+}
+.hero-meta span{
+  border:1px solid #82cdd85b;
+  background:#62e3df10;
+  border-radius:40px;
+  padding:6px 13px;
+  font-size:12px;
+  color:#d6f4f5;
+}
+.actions{
+  display:flex;flex-wrap:wrap;gap:12px;
+  margin-top:27px;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  background:var(--cyan);
+  color:#092233;
+  font-weight:800;
+  border-radius:10px;
+  padding:12px 20px;
+  border:1px solid var(--cyan);
+  transition:transform .2s,filter .2s;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.btn.outline{
+  background:transparent;
+  color:var(--text);
+  border-color:#7c9bb3;
+}
+.scroll-hint{
+  margin-top:55px;
+  color:#a9c4d5;
+  font-size:12px;
+  letter-spacing:2px;
+  animation:bob 2s infinite;
+}
+@keyframes bob{
+  50%{transform:translateY(9px)}
+}
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:70px 20px 100px;
+}
+.intro{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 60px;
+}
+.intro h2{
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.2;
+  margin:12px 0;
+}
+.intro p{color:var(--muted)}
+.roadmap{
+  position:relative;
+  isolation:isolate;
+  padding:25px 0 45px;
+}
+.road-svg{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  z-index:-1;
+  overflow:visible;
+  pointer-events:none;
+}
+#roadBase{
+  fill:none;
+  stroke:#24435b;
+  stroke-width:13;
+  stroke-linecap:round;
+  stroke-dasharray:2 23;
+}
+#roadGlow{
+  fill:none;
+  stroke:var(--cyan);
+  stroke-width:3;
+  stroke-linecap:round;
+  filter:drop-shadow(0 0 8px #62e3df77);
+}
+#traveler{
+  fill:var(--gold);
+  stroke:#fff2c9;
+  stroke-width:2;
+  filter:drop-shadow(0 0 10px #f4c77c);
+}
+.stop{
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  scroll-margin-top:90px;
+}
+.stop:nth-of-type(odd){justify-content:flex-start}
+.stop:nth-of-type(even){justify-content:flex-end}
+.stop-card{
+  width:43%;
+  padding:28px;
+  background:linear-gradient(145deg,#12283e,#0d2134);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:0 20px 55px #0003;
+  transition:transform .3s,border-color .3s;
+}
+.stop-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--cyan);
+}
+.chapter{
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.stop h2{
+  font-size:clamp(25px,3vw,36px);
+  line-height:1.2;
+  margin:10px 0 14px;
+}
+.stop p{color:var(--muted);margin:0 0 14px}
+.tag{
+  display:inline-block;
+  color:var(--cyan);
+  border:1px solid #62e3df4d;
+  background:#62e3df12;
+  border-radius:40px;
+  padding:5px 11px;
+  font-size:12px;
+  margin:4px 4px 4px 0;
+}
+.stop-icon{
+  display:inline-grid;place-items:center;
+  width:50px;height:50px;
+  border-radius:14px;
+  background:#62e3df16;
+  font-size:25px;
+  margin-bottom:13px;
+}
+.section-label{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+.explore{
+  margin-top:15px;
+  border:1px solid var(--cyan);
+  color:var(--cyan);
+  background:transparent;
+  padding:10px 15px;
+  border-radius:9px;
+  font-weight:750;
+}
+.explore:hover{background:#62e3df17}
+.hidden-content{
+  display:none;
+  margin-top:17px;
+  padding-top:17px;
+  border-top:1px solid var(--line);
+}
+.stop-card.expanded .hidden-content{display:block}
+.hidden-content p{font-size:14px}
+.project{
+  border:1px solid var(--line);
+  border-radius:11px;
+  margin:10px 0;
+  overflow:hidden;
+}
+.project button{
+  display:flex;justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  padding:13px;
+  text-align:left;
+  color:var(--text);
+  border:0;
+  background:#ffffff08;
+  font-size:14px;
+  font-weight:700;
+}
+.project button:hover{background:#ffffff13}
+.project-detail{
+  display:none;
+  padding:12px 14px;
+  border-top:1px solid var(--line);
+}
+.project.open .project-detail{display:block}
+.project-detail p{margin:0}
+.finish{
+  margin:65px auto 0;
+  max-width:880px;
+  padding:45px 25px;
+  border:1px solid #62e3df70;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at top right,#62e3df24,transparent 50%),
+    #10273c;
+  text-align:center;
+}
+.finish h2{
+  font-size:clamp(30px,5vw,48px);
+  margin:12px 0;
+}
+.finish p{color:var(--muted)}
+.finish .actions{justify-content:center}
+.recruiter{
+  position:fixed;
+  right:20px;bottom:20px;
+  z-index:30;
+  padding:12px 17px;
+  background:var(--gold);
+  color:#172438;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:850;
+  box-shadow:0 8px 30px #0007;
+  font-size:13px;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .75s,transform .75s;
+}
+.reveal.visible{
+  opacity:1;transform:none;
+}
+footer{
+  padding:35px 20px;
+  background:#040c16;
+  text-align:center;
+  color:var(--muted);
+}
+footer a{color:var(--cyan)}
+@media(max-width:800px){
+  .road-svg{display:none}
+  .roadmap{
+    margin-left:15px;
+    padding-left:28px;
+    border-left:3px dashed #62e3df80;
+  }
+  .stop,.stop:nth-of-type(odd),.stop:nth-of-type(even){
+    min-height:0;
+    display:block;
+    margin-bottom:45px;
+  }
+  .stop:before{
+    content:"";
+    position:absolute;
+    left:-40px;top:22px;
+    width:17px;height:17px;
+    border-radius:50%;
+    background:var(--cyan);
+    border:3px solid var(--bg);
+    box-shadow:0 0 0 2px var(--cyan);
+  }
+  .stop-card{width:100%;padding:22px}
+}
+@media(max-width:600px){
+  nav{padding:12px}
+  .links{gap:10px}
+  .links a{font-size:11px}
+  .hero{min-height:78vh;padding:70px 20px}
+  h1{letter-spacing:-1.5px}
+  .container{padding:55px 15px 75px}
+  .recruiter{right:12px;bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  *,*:before,*:after{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
+
+<div id="scrollbar"></div>
+
 <nav>
-<div class="brand">KM<span style="color:#69d8ed">.</span> ENGINEERING</div>
-<div class="navlinks">
-<a href="#about">About</a>
-<a href="#journey">Journey</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-<button class="iconbtn" id="themeBtn" aria-label="Switch theme">☾ Theme</button>
-</div>
+  <div class="logo">KM<span>.</span> JOURNEY</div>
+  <div class="links">
+    <a href="#chapter1">Start</a>
+    <a href="#chapter3">Projects</a>
+    <a href="#destination">Destination</a>
+  </div>
 </nav>
 
 <header class="hero">
-<div class="hero-content">
-<div class="eyebrow">Mechanical Engineering • BIET Jhansi • 2027</div>
-<h1>Krishna<br>Mathur<span style="color:#69d8ed">.</span></h1>
-<div class="typing" id="typing" aria-live="off">Mechanical Engineering Undergraduate</div>
-<p>Engineering design, industrial operations, computational simulation and technical leadership. Exploring opportunities in core mechanical engineering.</p>
-<div class="actions">
-<a class="btn" href="#projects">Explore My Projects ↓</a>
-<a class="btn outline" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-<a class="btn outline" href="#contact">Recruitment Contact</a>
-</div>
-</div>
+  <div class="hero-inner">
+    <div class="kicker">The Engineering Expedition / 2027</div>
+    <h1>Not Just a Resume.<br><em>A Journey.</em></h1>
+    <p>
+      I'm <strong style="color:white">Krishna Mathur</strong>,
+      a Mechanical Engineering undergraduate at BIET Jhansi.
+      Follow my journey from engineering fundamentals to industrial
+      training, technical projects and leadership.
+    </p>
+    <div class="hero-meta">
+      <span>Mechanical Engineering</span>
+      <span>BIET Jhansi</span>
+      <span>Graduating July 2027</span>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#chapter1">Start Exploring ↓</a>
+      <a class="btn outline" href="#destination">For Recruiters ↗</a>
+    </div>
+    <div class="scroll-hint">SCROLL TO BEGIN ↓</div>
+  </div>
 </header>
 
-<main>
-<div class="stats reveal">
-<div class="stat"><strong data-count="4">0</strong><small>Academic Projects</small></div>
-<div class="stat"><strong data-count="2">0</strong><small>Industrial Trainings</small></div>
-<div class="stat"><strong data-count="2">0</strong><small>Leadership Roles</small></div>
-</div>
+<main class="container">
+  <div class="intro reveal">
+    <div class="kicker">Your Route Through My Story</div>
+    <h2>Five Milestones.<br>One Destination.</h2>
+    <p>
+      Follow the glowing route. Every stop represents a different
+      stage of my development as a mechanical engineer.
+      Select <strong>Explore This Chapter</strong> to discover more.
+    </p>
+  </div>
 
-<section id="about" class="reveal" style="margin-top:70px">
-<h2>About Me</h2>
-<p class="subtitle">Combining theoretical engineering with practical industrial exposure.</p>
-<div class="card">
-<p>I am a B.Tech Mechanical Engineering undergraduate at Bundelkhand Institute of Engineering and Technology, Jhansi, with expected graduation in July 2027.</p>
-<p>My interests include mechanical design, manufacturing, production, computational fluid dynamics, maintenance and industrial engineering. My practical experience includes vocational training at ITC Limited and UPSRTC.</p>
-<span class="pill">Mechanical Design</span>
-<span class="pill">Manufacturing</span>
-<span class="pill">Simulation</span>
-<span class="pill">Plant Maintenance</span>
-</div>
-</section>
+  <div class="roadmap" id="roadmap">
 
-<section id="journey" class="reveal">
-<h2>My Engineering Journey</h2>
-<p class="subtitle">Click each milestone to discover more.</p>
-<div class="timeline">
-<div class="event">
-<button aria-expanded="false">2027 — Expected B.Tech Graduation ＋</button>
-<div class="detail">Mechanical Engineering, Bundelkhand Institute of Engineering and Technology, Jhansi. Expected graduation: July 2027.</div>
-</div>
-<div class="event">
-<button aria-expanded="false">2026 — Professional Development ＋</button>
-<div class="detail">Completed 42 hours of Ignite India training through the Wadhwani Foundation. Organized Horizon 1.0 with Solarpunk Corps.</div>
-</div>
-<div class="event">
-<button aria-expanded="false">2025 — Technical Leadership ＋</button>
-<div class="detail">Coordinated Mech Motion 2.0 and received a Certificate of Appreciation. Contributed to engineering and student-led technical initiatives.</div>
-</div>
-<div class="event">
-<button aria-expanded="false">Industrial Training — ITC & UPSRTC ＋</button>
-<div class="detail">Studied industrial production, machinery, preventive maintenance, engine overhauling and mechanical systems through vocational training.</div>
-</div>
-</div>
-</section>
+    <svg class="road-svg" id="roadSvg"
+      viewBox="0 0 1000 2600"
+      preserveAspectRatio="none"
+      aria-hidden="true">
+      <path id="roadBase"
+        d="M500 20
+           C500 200 740 240 740 510
+           S260 780 260 1030
+           S740 1300 740 1550
+           S260 1830 260 2070
+           S500 2400 500 2580"/>
+      <path id="roadGlow"
+        d="M500 20
+           C500 200 740 240 740 510
+           S260 780 260 1030
+           S740 1300 740 1550
+           S260 1830 260 2070
+           S500 2400 500 2580"/>
+      <circle id="traveler" cx="500" cy="20" r="12"/>
+    </svg>
 
-<section id="experience" class="reveal">
-<h2>Industrial Exposure</h2>
-<p class="subtitle">Learning from real engineering operations.</p>
-<div class="grid">
-<div class="card">
-<span class="pill">Vocational Trainee</span>
-<h3>ITC Limited — Haridwar</h3>
-<p>Studied automated soap production lines, conveyors, drives and packaging machinery.</p>
-<p>Analyzed preventive maintenance of centrifugal pumps and steam piping, and documented SOPs.</p>
-</div>
-<div class="card">
-<span class="pill">Vocational Trainee</span>
-<h3>UPSRTC — Agra</h3>
-<p>Observed overhaul of diesel engines, transmissions and steering systems, and evaluated pneumatic brakes.</p>
-<p>Used Excel to categorize breakdown patterns and failure modes.</p>
-</div>
-</div>
-</section>
+    <section class="stop" id="chapter1">
+      <article class="stop-card reveal">
+        <div class="stop-icon">🎓</div>
+        <div class="chapter">Milestone 01 / Foundation</div>
+        <h2>The Beginning</h2>
+        <p>
+          Every engineering journey begins with curiosity about
+          how machines work.
+        </p>
+        <p>
+          <strong>BIET Jhansi</strong><br>
+          B.Tech Mechanical Engineering<br>
+          Expected graduation: July 2027
+        </p>
+        <span class="tag">Mechanical Design</span>
+        <span class="tag">Fluid Mechanics</span>
+        <span class="tag">Thermal Engineering</span>
+        <button class="explore" aria-expanded="false">
+          Explore This Chapter ＋
+        </button>
+        <div class="hidden-content">
+          <p>
+            My academic work has developed my understanding of
+            engineering design, fluid flow, thermal systems,
+            mechanical mechanisms and analysis.
+          </p>
+          <p>
+            I apply these concepts through CAD modeling,
+            simulation and practical engineering projects.
+          </p>
+        </div>
+      </article>
+    </section>
 
-<section id="projects" class="reveal">
-<h2>Engineering Project Explorer</h2>
-<p class="subtitle">Filter by engineering discipline and open a technical project brief.</p>
-<div class="filters" id="projectFilters">
-<button class="filter active" data-filter="all">All Projects</button>
-<button class="filter" data-filter="cad">CAD / Design</button>
-<button class="filter" data-filter="cfd">CFD</button>
-<button class="filter" data-filter="thermal">Thermal</button>
-</div>
-<div class="grid" id="projectGrid">
-<article class="card project" data-category="cad thermal" data-project="heat">
-<span class="pill">SolidWorks</span><span class="pill">Thermal</span>
-<h3>Air Conditioner Heat Exchanger</h3>
-<p>Fin-and-tube coil design with copper tubes and aluminum fins.</p>
-<button class="more" data-open="heat">Explore Technical Details →</button>
-</article>
-<article class="card project" data-category="cfd" data-project="nozzle">
-<span class="pill">ANSYS Fluent</span><span class="pill">CFD</span>
-<h3>Convergent-Divergent Nozzle</h3>
-<p>Supersonic flow, pressure variation, Mach contours and shock formation.</p>
-<button class="more" data-open="nozzle">Explore Technical Details →</button>
-</article>
-<article class="card project" data-category="cad" data-project="governor">
-<span class="pill">SolidWorks</span><span class="pill">Dynamics</span>
-<h3>Hartnell Governor</h3>
-<p>Dynamic modeling and kinematic assembly of a centrifugal governor.</p>
-<button class="more" data-open="governor">Explore Technical Details →</button>
-</article>
-<article class="card project" data-category="cad" data-project="bicycle">
-<span class="pill">SolidWorks</span><span class="pill">Materials</span>
-<h3>Ergonomic Bicycle Frame</h3>
-<p>Frame design, rider ergonomics and material optimization.</p>
-<button class="more" data-open="bicycle">Explore Technical Details →</button>
-</article>
-</div>
-</section>
+    <section class="stop" id="chapter2">
+      <article class="stop-card reveal">
+        <div class="stop-icon">🏭</div>
+        <div class="chapter">Milestone 02 / Industrial Exposure</div>
+        <h2>Beyond the Classroom</h2>
+        <p>
+          Understanding how engineering operates in actual
+          industrial and maintenance environments.
+        </p>
+        <span class="tag">ITC Limited, Haridwar</span>
+        <span class="tag">UPSRTC, Agra</span>
+        <button class="explore" aria-expanded="false">
+          Explore This Chapter ＋
+        </button>
+        <div class="hidden-content">
+          <h3>ITC Limited</h3>
+          <p>
+            Vocational training covering automated soap production
+            lines, conveyors, mechanical drives and packaging machinery.
+            Studied preventive maintenance of centrifugal pumps and
+            steam piping and documented operating procedures.
+          </p>
+          <h3>UPSRTC</h3>
+          <p>
+            Vocational exposure to diesel engine, transmission and
+            steering overhauling, pneumatic braking systems and
+            breakdown analysis using Excel.
+          </p>
+        </div>
+      </article>
+    </section>
 
-<section id="skills" class="reveal">
-<h2>Technical Competencies</h2>
-<p class="subtitle">Select a category to explore my technical background.</p>
-<div class="filters" id="skillFilters">
-<button class="filter active" data-skill="design">Design</button>
-<button class="filter" data-skill="simulation">Simulation</button>
-<button class="filter" data-skill="industrial">Industrial</button>
-<button class="filter" data-skill="professional">Professional</button>
-</div>
-<div class="card">
-<div class="skill-panel active" id="skill-design">
-<h3>CAD & Mechanical Design</h3>
-<div class="skill-item">SolidWorks — Part and Assembly Design</div>
-<div class="skill-item">AutoCAD — 2D Drafting</div>
-<div class="skill-item">Geometric Dimensioning & Tolerancing</div>
-</div>
-<div class="skill-panel" id="skill-simulation">
-<h3>CAE & Numerical Simulation</h3>
-<div class="skill-item">ANSYS Fluent — Compressible Flow</div>
-<div class="skill-item">ANSYS Mechanical — Static Stress</div>
-<div class="skill-item">Factor of Safety Evaluation</div>
-</div>
-<div class="skill-panel" id="skill-industrial">
-<h3>Industrial Systems</h3>
-<div class="skill-item">Pneumatics and Pumps</div>
-<div class="skill-item">Piping and Preventive Maintenance</div>
-<div class="skill-item">Root Cause Analysis</div>
-</div>
-<div class="skill-panel" id="skill-professional">
-<h3>Professional Competencies</h3>
-<div class="skill-item">MS Excel, Word and PowerPoint</div>
-<div class="skill-item">Cost Estimation</div>
-<div class="skill-item">Team Leadership</div>
-</div>
-</div>
-</section>
+    <section class="stop" id="chapter3">
+      <article class="stop-card reveal">
+        <div class="stop-icon">⚙️</div>
+        <div class="chapter">Milestone 03 / Engineering Projects</div>
+        <h2>From Theory to Design</h2>
+        <p>
+          Exploring how engineering ideas become CAD models,
+          simulations and mechanical systems.
+        </p>
+        <span class="tag">SolidWorks</span>
+        <span class="tag">ANSYS Fluent</span>
+        <span class="tag">Machine Dynamics</span>
+        <button class="explore" aria-expanded="false">
+          Explore This Chapter ＋
+        </button>
+        <div class="hidden-content">
 
-<section id="leadership" class="reveal">
-<h2>Leadership & Recognition</h2>
-<div class="grid">
-<div class="card">
-<h3>Mercenary Motorsports Club</h3>
-<p>Senior Team Lead and Head of Powertrain. Worked on transmission layout, mounting rigidity, drive ratios and cooling.</p>
-</div>
-<div class="card">
-<h3>Solarpunk Corps Club</h3>
-<p>Sustainable Development Head. Evaluated sustainable materials and lightweight robotics frames.</p>
-</div>
-<div class="card">
-<h3>Achievements</h3>
-<p>Mr. Spandan title winner, Mechanical Engineering Forum, BIET.</p>
-<p>Second Runner-Up, AEROWORKS 3.0.</p>
-</div>
-</div>
-</section>
+          <div class="project">
+            <button aria-expanded="false">
+              Heat Exchanger Design <span>＋</span>
+            </button>
+            <div class="project-detail">
+              <p>
+                Designed a fin-and-tube air conditioner heat
+                exchanger using SolidWorks, with copper tubes
+                and aluminum fins. Considered heat-transfer area,
+                airflow resistance and pressure drop.
+              </p>
+            </div>
+          </div>
 
-<section id="certifications" class="reveal">
-<h2>Certifications & Activities</h2>
-<div class="card">
-<p><strong>Ignite India:</strong> Wadhwani Foundation — 42 hours, April 2026.</p>
-<p><strong>Manak Utsav 2025:</strong> Event Coordinator, BIS collaboration.</p>
-<p><strong>Horizon 1.0:</strong> Organizer, Solarpunk Corps, March 2026.</p>
-<p><strong>Mech-Motion Workshop:</strong> Certificate of Appreciation.</p>
-</div>
-</section>
+          <div class="project">
+            <button aria-expanded="false">
+              Convergent-Divergent Nozzle <span>＋</span>
+            </button>
+            <div class="project-detail">
+              <p>
+                Used ANSYS Fluent to study compressible flow
+                through parametric nozzle geometries, including
+                Mach contours, pressure distributions, velocity
+                vectors and shock formation.
+              </p>
+            </div>
+          </div>
 
-<section id="contact" class="reveal">
-<h2>Recruitment & Contact</h2>
-<p class="subtitle">Interested in Graduate Engineer Trainee opportunities in core mechanical engineering.</p>
-<div class="card">
-<h3>Let's Connect</h3>
-<p>Explore my experience, review my engineering projects or contact me about relevant recruitment opportunities.</p>
-<div class="actions">
-<a class="btn" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-<a class="btn" href="mailto:krishnamathur00001@gmail.com">Email Me ↗</a>
-<a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">View Resume PDF ↗</a>
-</div>
-<p style="font-size:12px">The PDF button requires a file named resume.pdf in the repository root.</p>
-</div>
-</section>
+          <div class="project">
+            <button aria-expanded="false">
+              Hartnell Governor <span>＋</span>
+            </button>
+            <div class="project-detail">
+              <p>
+                Modeled a spring-loaded centrifugal governor
+                in SolidWorks. Studied kinematic constraints,
+                equilibrium speed and sleeve travel.
+              </p>
+            </div>
+          </div>
+
+          <div class="project">
+            <button aria-expanded="false">
+              Ergonomic Bicycle Frame <span>＋</span>
+            </button>
+            <div class="project-detail">
+              <p>
+                Used SolidWorks to examine frame geometry,
+                rider posture, load paths, structural rigidity
+                and material alternatives.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+    <section class="stop" id="chapter4">
+      <article class="stop-card reveal">
+        <div class="stop-icon">🏁</div>
+        <div class="chapter">Milestone 04 / Leadership</div>
+        <h2>Learning to Lead</h2>
+        <p>
+          Engineering also requires teamwork, technical
+          decisions and responsibility.
+        </p>
+        <span class="tag">Powertrain</span>
+        <span class="tag">Sustainability</span>
+        <span class="tag">Team Leadership</span>
+        <button class="explore" aria-expanded="false">
+          Explore This Chapter ＋
+        </button>
+        <div class="hidden-content">
+          <h3>Mercenary Motorsports Club</h3>
+          <p>
+            Senior Team Lead and Head of Powertrain.
+            Worked on transmission layout, mounting rigidity,
+            drive ratios and cooling.
+          </p>
+          <h3>Solarpunk Corps Club</h3>
+          <p>
+            Sustainable Development Head.
+            Contributed to sustainable material evaluation
+            and lightweight robotics frame concepts.
+          </p>
+          <h3>Recognition</h3>
+          <p>
+            Mr. Spandan title winner and Second Runner-Up
+            at AEROWORKS 3.0.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="stop" id="chapter5">
+      <article class="stop-card reveal">
+        <div class="stop-icon">🚀</div>
+        <div class="chapter">Milestone 05 / Future</div>
+        <h2>The Road Ahead</h2>
+        <p>
+          Preparing for the next stage: contributing to
+          core mechanical engineering through a
+          Graduate Engineer Trainee opportunity.
+        </p>
+        <span class="tag">Manufacturing</span>
+        <span class="tag">Production</span>
+        <span class="tag">Design</span>
+        <span class="tag">Industrial Operations</span>
+        <button class="explore" aria-expanded="false">
+          Explore This Chapter ＋
+        </button>
+        <div class="hidden-content">
+          <p>
+            My technical toolkit includes SolidWorks, AutoCAD,
+            GD&T, ANSYS Fluent, ANSYS Mechanical, pumps,
+            pneumatics, preventive maintenance, root cause
+            analysis and Microsoft Excel.
+          </p>
+          <p>
+            I expect to graduate in July 2027 and am
+            interested in relevant core mechanical engineering roles.
+          </p>
+        </div>
+      </article>
+    </section>
+
+  </div>
+
+  <section class="finish reveal" id="destination">
+    <div class="kicker">You've Reached the Destination</div>
+    <h2>My Next Chapter<br>Could Start With You.</h2>
+    <p>
+      Krishna Mathur<br>
+      B.Tech Mechanical Engineering | BIET Jhansi<br>
+      Expected Graduation: July 2027
+    </p>
+    <div class="actions">
+      <a class="btn"
+        href="https://www.linkedin.com/in/krishna-mathur-a73536287"
+        target="_blank" rel="noopener noreferrer">
+        LinkedIn ↗
+      </a>
+      <a class="btn outline"
+        href="mailto:krishnamathur00001@gmail.com">
+        Contact Me ↗
+      </a>
+      <a class="btn outline"
+        id="resumeLink"
+        href="resume.pdf"
+        target="_blank" rel="noopener noreferrer"
+        hidden>
+        View Resume ↗
+      </a>
+    </div>
+    <p id="resumeNote" style="font-size:12px;margin-top:18px">
+      Resume link will appear once resume.pdf is uploaded.
+    </p>
+  </section>
 </main>
 
-<a class="floating" href="#contact">Contact ↗</a>
-
-<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-<div class="dialog">
-<button class="close" id="closeModal" aria-label="Close project details">✕</button>
-<h2 id="modalTitle"></h2>
-<div id="modalContent"></div>
-</div>
-</div>
+<a class="recruiter" href="#destination">
+  Recruiter View ↗
+</a>
 
 <footer>
-<strong>Krishna Mathur</strong>
-<p>Mechanical Engineering | BIET Jhansi | 2027</p>
-<p><a href="https://www.linkedin.com/in/krishna-mathur-a73536287">LinkedIn</a> • <a href="mailto:krishnamathur00001@gmail.com">Email</a></p>
-<small>© 2026 Krishna Mathur</small>
+  <strong>Krishna Mathur</strong>
+  <p>Engineering is a journey of continuous learning.</p>
+  <p>
+    <a href="https://www.linkedin.com/in/krishna-mathur-a73536287">
+      LinkedIn
+    </a>
+    ·
+    <a href="mailto:krishnamathur00001@gmail.com">
+      Email
+    </a>
+  </p>
+  <small>© 2026 Krishna Mathur</small>
 </footer>
 
 <script>
-const projectData={
-heat:{
- title:"Air Conditioner Heat Exchanger",
- html:`<p><strong>Software:</strong> SolidWorks</p>
- <p><strong>Objective:</strong> Design a fin-and-tube heat exchanger with enhanced heat-transfer area.</p>
- <p><strong>Engineering work:</strong> Modeled copper tubes and aluminum fins, and evaluated boundary-flow conditions to reduce airflow resistance and pressure drop.</p>
- <p><strong>Focus:</strong> Heat transfer, geometry and airflow considerations.</p>`
-},
-nozzle:{
- title:"Convergent-Divergent Nozzle",
- html:`<p><strong>Software:</strong> ANSYS Fluent</p>
- <p><strong>Objective:</strong> Investigate compressible flow through a convergent-divergent nozzle.</p>
- <p><strong>Engineering work:</strong> Created parametric 2D and 3D models and examined velocity vectors, pressure distributions, Mach contours and shock formation.</p>
- <p><strong>Focus:</strong> Supersonic flow and CFD interpretation.</p>`
-},
-governor:{
- title:"Hartnell Governor",
- html:`<p><strong>Software:</strong> SolidWorks</p>
- <p><strong>Objective:</strong> Model a spring-loaded centrifugal governor assembly.</p>
- <p><strong>Engineering work:</strong> Applied kinematic constraints to levers, flyballs and sleeve, and evaluated equilibrium speeds and sleeve travel across RPM ranges.</p>
- <p><strong>Focus:</strong> Mechanism design and stability.</p>`
-},
-bicycle:{
- title:"Ergonomic Bicycle Frame",
- html:`<p><strong>Software:</strong> SolidWorks</p>
- <p><strong>Objective:</strong> Develop an ergonomic frame with suitable structural rigidity.</p>
- <p><strong>Engineering work:</strong> Examined rider posture, frame clearances, load transfer paths and sustainable material alternatives to steel and aluminum.</p>
- <p><strong>Focus:</strong> Ergonomics, structural design and material selection.</p>`
+"use strict";
+
+const progressBar=document.getElementById("scrollbar");
+const roadmap=document.getElementById("roadmap");
+const road=document.getElementById("roadGlow");
+const traveler=document.getElementById("traveler");
+const roadLength=road.getTotalLength();
+
+road.style.strokeDasharray=roadLength;
+road.style.strokeDashoffset=roadLength;
+
+let ticking=false;
+
+function updateJourney(){
+  const maxScroll=
+    document.documentElement.scrollHeight-window.innerHeight;
+
+  const pageProgress=maxScroll>0
+    ?Math.min(1,Math.max(0,window.scrollY/maxScroll))
+    :0;
+
+  progressBar.style.width=(pageProgress*100)+"%";
+
+  const rect=roadmap.getBoundingClientRect();
+  const viewportCenter=window.innerHeight*.48;
+
+  const traveled=Math.min(1,Math.max(0,
+    (viewportCenter-rect.top)/rect.height
+  ));
+
+  const distance=traveled*roadLength;
+
+  road.style.strokeDashoffset=roadLength-distance;
+
+  const point=road.getPointAtLength(distance);
+  traveler.setAttribute("cx",point.x);
+  traveler.setAttribute("cy",point.y);
+
+  ticking=false;
 }
-};
 
-const themeBtn=document.getElementById("themeBtn");
-try{
- if(localStorage.getItem("km-theme")==="dark")
- document.body.classList.add("dark");
-}catch(e){}
-themeBtn.addEventListener("click",()=>{
- document.body.classList.toggle("dark");
- try{localStorage.setItem("km-theme",document.body.classList.contains("dark")?"dark":"light")}catch(e){}
-});
-
-const phrases=[
- "Mechanical Engineering Undergraduate",
- "CAD & Mechanical Design",
- "Industrial Training & Maintenance",
- "Computational Fluid Dynamics",
- "Aspiring Graduate Engineer Trainee"
-];
-let phraseIndex=0;
-const typing=document.getElementById("typing");
-setInterval(()=>{
- phraseIndex=(phraseIndex+1)%phrases.length;
- typing.textContent=phrases[phraseIndex];
-},2600);
-
-document.querySelectorAll("#projectFilters .filter").forEach(btn=>{
- btn.addEventListener("click",()=>{
- document.querySelectorAll("#projectFilters .filter").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- const filter=btn.dataset.filter;
- document.querySelectorAll(".project").forEach(card=>{
- card.hidden=filter!=="all"&&!card.dataset.category.split(" ").includes(filter);
- });
- });
-});
-
-document.querySelectorAll("#skillFilters .filter").forEach(btn=>{
- btn.addEventListener("click",()=>{
- document.querySelectorAll("#skillFilters .filter").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- document.querySelectorAll(".skill-panel").forEach(p=>p.classList.remove("active"));
- document.getElementById("skill-"+btn.dataset.skill).classList.add("active");
- });
-});
-
-document.querySelectorAll(".event button").forEach(btn=>{
- btn.addEventListener("click",()=>{
- const event=btn.parentElement;
- const open=event.classList.toggle("open");
- btn.setAttribute("aria-expanded",String(open));
- });
-});
-
-const modal=document.getElementById("projectModal");
-const closeModal=document.getElementById("closeModal");
-let lastFocus=null;
-function hideModal(){
- modal.classList.remove("show");
- modal.setAttribute("aria-hidden","true");
- document.body.style.overflow="";
- if(lastFocus)lastFocus.focus();
+function requestUpdate(){
+  if(!ticking){
+    ticking=true;
+    requestAnimationFrame(updateJourney);
+  }
 }
-document.querySelectorAll("[data-open]").forEach(btn=>{
- btn.addEventListener("click",()=>{
- const data=projectData[btn.dataset.open];
- if(!data)return;
- lastFocus=btn;
- document.getElementById("modalTitle").textContent=data.title;
- document.getElementById("modalContent").innerHTML=data.html;
- modal.classList.add("show");
- modal.setAttribute("aria-hidden","false");
- document.body.style.overflow="hidden";
- closeModal.focus();
- });
-});
-closeModal.addEventListener("click",hideModal);
-modal.addEventListener("click",e=>{if(e.target===modal)hideModal()});
-document.addEventListener("keydown",e=>{
- if(e.key==="Escape"&&modal.classList.contains("show"))hideModal();
- if(e.key==="Tab"&&modal.classList.contains("show")){
- const focusable=Array.from(modal.querySelectorAll("button,a[href]"));
- const first=focusable[0],last=focusable[focusable.length-1];
- if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
- else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
- }
+
+window.addEventListener("scroll",requestUpdate,{passive:true});
+window.addEventListener("resize",requestUpdate);
+updateJourney();
+
+document.querySelectorAll(".explore").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const card=button.closest(".stop-card");
+    const expanded=card.classList.toggle("expanded");
+
+    button.setAttribute("aria-expanded",String(expanded));
+    button.textContent=expanded
+      ?"Close This Chapter −"
+      :"Explore This Chapter ＋";
+
+    requestUpdate();
+  });
 });
 
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
- if(!entry.isIntersecting)return;
- entry.target.classList.add("visible");
- if(entry.target.classList.contains("stats")){
- entry.target.querySelectorAll("[data-count]").forEach(el=>{
- const target=Number(el.dataset.count);
- if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
- el.textContent=target;return;
- }
- let n=0;
- const timer=setInterval(()=>{
- n++;el.textContent=n;
- if(n>=target)clearInterval(timer);
- },130);
- });
- }
- observer.unobserve(entry.target);
- });
-},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+document.querySelectorAll(".project button").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const project=button.closest(".project");
+    const open=project.classList.toggle("open");
+
+    button.setAttribute("aria-expanded",String(open));
+    button.querySelector("span").textContent=open?"−":"＋";
+
+    requestUpdate();
+  });
+});
+
+if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+
+  document.querySelectorAll(".reveal").forEach(element=>{
+    observer.observe(element);
+  });
+}else{
+  document.querySelectorAll(".reveal").forEach(element=>{
+    element.classList.add("visible");
+  });
+}
+
+// Show the resume button only if the PDF exists.
+fetch("resume.pdf",{method:"HEAD"})
+  .then(response=>{
+    if(response.ok){
+      document.getElementById("resumeLink").hidden=false;
+      document.getElementById("resumeNote").hidden=true;
+    }
+  })
+  .catch(()=>{});
 </script>
+
 </body>
 </html>
-
