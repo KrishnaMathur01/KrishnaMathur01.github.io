@@ -3,288 +3,455 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Krishna Mathur - Mechanical Engineering undergraduate, industrial training, engineering projects and professional portfolio.">
-<title>Krishna Mathur | Mechanical Engineering Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Krishna Mathur | Mechanical Engineering Portfolio | BIET Jhansi | 2027">
+<title>Krishna Mathur — Engineering Portfolio</title>
 <style>
 :root{
-  --navy:#0b1930;
-  --blue:#1765b3;
-  --cyan:#65d5e7;
-  --light:#f3f6fa;
-  --ink:#17263a;
-  --muted:#607086;
+ --bg:#f3f6fb;--surface:#fff;--text:#14243b;
+ --muted:#61738b;--accent:#087dbb;--line:#dce5ef;
+ --hero:#08182c;--hero2:#123c61;
+}
+body.dark{
+ --bg:#0b1423;--surface:#152238;--text:#eef5ff;
+ --muted:#aabbd0;--accent:#5bd4ed;--line:#30435b;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--light);line-height:1.65}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .3s,color .3s}
+button,a{font:inherit}
+button{cursor:pointer}
 a{color:inherit}
-nav{background:#09172b;color:white;padding:16px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-nav strong{font-size:20px}
-nav a{font-size:14px;text-decoration:none;margin-left:15px;color:#d5e6fa}
-nav a:hover{color:var(--cyan)}
-.hero{background:linear-gradient(135deg,#09172b,#163b62);color:white;padding:90px 7% 100px}
-.hero-inner{max-width:1050px;margin:auto}
-.eyebrow{color:var(--cyan);letter-spacing:2px;font-weight:bold;text-transform:uppercase;font-size:13px}
-h1{font-size:clamp(40px,7vw,74px);line-height:1.1;margin:16px 0}
-.hero p{max-width:700px;color:#d3e2f3;font-size:18px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-block;background:var(--cyan);color:#09213c;padding:12px 20px;border-radius:8px;font-weight:bold;text-decoration:none;border:1px solid var(--cyan)}
-.btn.secondary{background:transparent;color:white;border-color:#8ba9c8}
-.btn:hover{filter:brightness(.92)}
-main{max-width:1100px;margin:auto;padding:40px 20px}
-section{margin-bottom:58px;scroll-margin-top:25px}
-h2{font-size:30px;margin-bottom:8px}
-.sub{color:var(--muted);margin-top:0;margin-bottom:24px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
-.card{background:white;border:1px solid #e0e8f0;border-radius:14px;padding:24px;box-shadow:0 5px 18px #122c4910}
-.card h3{margin:5px 0 12px;color:#123d68}
-.card p{color:#43546a}
-.tag{display:inline-block;background:#e5f0fc;color:#14558f;border-radius:30px;padding:5px 11px;margin:4px 4px 4px 0;font-size:13px;font-weight:bold}
-.timeline{border-left:3px solid var(--blue);margin-left:10px;padding-left:24px}
-.event{position:relative;background:white;padding:20px;margin-bottom:18px;border-radius:12px;border:1px solid #e0e8f0}
-.event:before{content:"";position:absolute;left:-33px;top:24px;width:14px;height:14px;background:var(--blue);border-radius:50%;border:3px solid white}
-.event h3{margin:0;color:#123d68}
-.event p{margin-bottom:0}
-details{margin-top:12px;border-top:1px solid #e3e9f0;padding-top:12px}
-summary{cursor:pointer;color:var(--blue);font-weight:bold}
-details p{margin-bottom:4px}
-footer{background:var(--navy);color:white;text-align:center;padding:35px 20px}
-footer a{color:var(--cyan)}
-@media(max-width:650px){
-nav{padding:15px}
-nav a{margin:0 10px 0 0}
-.hero{padding:65px 20px}
-main{padding:30px 15px}
+nav{position:sticky;top:0;z-index:20;background:#09192c;color:white;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:12px;box-shadow:0 4px 20px #0002}
+.brand{font-size:21px;font-weight:800;letter-spacing:1px}
+.navlinks{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-size:13px;color:#e0eaf7}
+.navlinks a:hover{color:#65d5ef}
+.iconbtn{background:#ffffff17;color:white;border:1px solid #ffffff35;padding:8px 12px;border-radius:9px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--hero),var(--hero2));color:white;padding:90px 7% 110px}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #65d5ef35;border-radius:50%;right:-100px;top:50px;box-shadow:0 0 0 45px #65d5ef09,0 0 0 100px #65d5ef07;pointer-events:none}
+.hero-content{max-width:1000px;margin:auto;position:relative;z-index:1}
+.eyebrow{color:#65d5ef;font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.08;margin:16px 0}
+.hero p{max-width:720px;color:#d5e4f4;font-size:18px}
+.typing{color:#76e4f4;min-height:32px;font-weight:700}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:11px 18px;text-decoration:none;font-weight:700;border:1px solid transparent;background:#69d8ed;color:#092238;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.outline{background:transparent;border-color:#9cb7d1;color:white}
+main{max-width:1120px;margin:auto;padding:45px 20px}
+section{margin-bottom:75px;scroll-margin-top:90px}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 8px}
+.subtitle{color:var(--muted);margin:0 0 25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:23px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #00000012}
+.card h3{margin:4px 0 10px}
+.card p{color:var(--muted)}
+.pill{display:inline-block;background:#167cb51b;color:var(--accent);border-radius:30px;padding:5px 11px;font-size:12px;font-weight:700;margin:4px 4px 4px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-40px;position:relative;z-index:2}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:23px;text-align:center;box-shadow:0 8px 25px #0001}
+.stat strong{font-size:34px;color:var(--accent);display:block}
+.stat small{color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}
+.filter{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 16px;border-radius:25px}
+.filter.active{background:var(--accent);color:white;border-color:var(--accent)}
+.project{display:flex;flex-direction:column}
+.project .more{margin-top:auto;background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:10px;font-weight:700}
+.project[hidden]{display:none}
+.timeline{border-left:3px solid var(--accent);margin-left:12px;padding-left:25px}
+.event{position:relative;margin-bottom:16px}
+.event:before{content:"";position:absolute;left:-35px;top:25px;background:var(--accent);width:13px;height:13px;border:3px solid var(--bg);border-radius:50%}
+.event button{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:18px;border-radius:12px;font-weight:bold}
+.event .detail{display:none;padding:0 18px 16px;background:var(--surface);border-radius:0 0 12px 12px;color:var(--muted)}
+.event.open .detail{display:block}
+.skill-panel{display:none}
+.skill-panel.active{display:block}
+.skill-item{padding:10px 0;border-bottom:1px solid var(--line)}
+.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.show{display:flex}
+.dialog{background:var(--surface);color:var(--text);border-radius:18px;padding:26px;max-width:610px;width:100%;max-height:85vh;overflow:auto}
+.close{float:right;border:0;background:var(--line);color:var(--text);border-radius:8px;padding:5px 12px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+.floating{position:fixed;right:20px;bottom:20px;z-index:15;background:var(--accent);color:white;padding:12px 16px;border-radius:40px;text-decoration:none;box-shadow:0 5px 20px #0003}
+footer{background:#09192c;color:#e4edf8;text-align:center;padding:35px}
+footer a{color:#76dff2}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media(max-width:680px){
+nav{flex-wrap:wrap}.navlinks{width:100%;justify-content:center;gap:12px}
+.hero{padding:65px 20px 85px}
+.stats{grid-template-columns:repeat(3,1fr)}
+.stat{padding:14px 5px}.stat strong{font-size:25px}.stat small{font-size:11px}
+main{padding:40px 15px}
 }
 </style>
 </head>
 <body>
-
 <nav>
-<strong>KM / Engineering</strong>
-<div>
+<div class="brand">KM<span style="color:#69d8ed">.</span> ENGINEERING</div>
+<div class="navlinks">
 <a href="#about">About</a>
-<a href="#experience">Experience</a>
+<a href="#journey">Journey</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
+<button class="iconbtn" id="themeBtn" aria-label="Switch theme">☾ Theme</button>
 </div>
 </nav>
 
 <header class="hero">
-<div class="hero-inner">
-<div class="eyebrow">Mechanical Engineering | Class of 2027</div>
-<h1>Krishna Mathur</h1>
-<p>
-Mechanical Engineering undergraduate at Bundelkhand Institute of Engineering and Technology, Jhansi.
-Experience in industrial training, engineering design, simulation, maintenance and technical leadership.
-</p>
+<div class="hero-content">
+<div class="eyebrow">Mechanical Engineering • BIET Jhansi • 2027</div>
+<h1>Krishna<br>Mathur<span style="color:#69d8ed">.</span></h1>
+<div class="typing" id="typing" aria-live="off">Mechanical Engineering Undergraduate</div>
+<p>Engineering design, industrial operations, computational simulation and technical leadership. Exploring opportunities in core mechanical engineering.</p>
 <div class="actions">
-<a class="btn" href="#projects">Explore My Work</a>
-<a class="btn secondary" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-<a class="btn secondary" href="#contact">Contact Me</a>
+<a class="btn" href="#projects">Explore My Projects ↓</a>
+<a class="btn outline" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+<a class="btn outline" href="#contact">Recruitment Contact</a>
 </div>
 </div>
 </header>
 
 <main>
-<section id="about">
+<div class="stats reveal">
+<div class="stat"><strong data-count="4">0</strong><small>Academic Projects</small></div>
+<div class="stat"><strong data-count="2">0</strong><small>Industrial Trainings</small></div>
+<div class="stat"><strong data-count="2">0</strong><small>Leadership Roles</small></div>
+</div>
+
+<section id="about" class="reveal" style="margin-top:70px">
 <h2>About Me</h2>
-<p class="sub">Engineering fundamentals. Practical exposure. Continuous learning.</p>
+<p class="subtitle">Combining theoretical engineering with practical industrial exposure.</p>
 <div class="card">
-<p>
-I am pursuing a B.Tech in Mechanical Engineering at BIET Jhansi, with expected graduation in July 2027.
-My interests include mechanical design, manufacturing, production, simulation and plant maintenance.
-I have undertaken vocational training at ITC Limited and UPSRTC and worked on academic engineering projects using SolidWorks and ANSYS.
-</p>
-<p>
-I am interested in Graduate Engineer Trainee opportunities in core mechanical engineering industries.
-</p>
+<p>I am a B.Tech Mechanical Engineering undergraduate at Bundelkhand Institute of Engineering and Technology, Jhansi, with expected graduation in July 2027.</p>
+<p>My interests include mechanical design, manufacturing, production, computational fluid dynamics, maintenance and industrial engineering. My practical experience includes vocational training at ITC Limited and UPSRTC.</p>
+<span class="pill">Mechanical Design</span>
+<span class="pill">Manufacturing</span>
+<span class="pill">Simulation</span>
+<span class="pill">Plant Maintenance</span>
 </div>
 </section>
 
-<section id="journey">
-<h2>My Professional Journey</h2>
-<p class="sub">A timeline of my education and professional development.</p>
+<section id="journey" class="reveal">
+<h2>My Engineering Journey</h2>
+<p class="subtitle">Click each milestone to discover more.</p>
 <div class="timeline">
 <div class="event">
-<h3>2027 — Expected Graduation</h3>
-<p>B.Tech Mechanical Engineering, BIET Jhansi.</p>
+<button aria-expanded="false">2027 — Expected B.Tech Graduation ＋</button>
+<div class="detail">Mechanical Engineering, Bundelkhand Institute of Engineering and Technology, Jhansi. Expected graduation: July 2027.</div>
 </div>
 <div class="event">
-<h3>2026 — Professional Development</h3>
-<p>Ignite India, Wadhwani Foundation — 42 hours. Leadership and engineering activities at BIET.</p>
+<button aria-expanded="false">2026 — Professional Development ＋</button>
+<div class="detail">Completed 42 hours of Ignite India training through the Wadhwani Foundation. Organized Horizon 1.0 with Solarpunk Corps.</div>
 </div>
 <div class="event">
-<h3>2025 — Technical Leadership and Events</h3>
-<p>Coordinated Mech Motion 2.0 and participated in technical initiatives at BIET.</p>
+<button aria-expanded="false">2025 — Technical Leadership ＋</button>
+<div class="detail">Coordinated Mech Motion 2.0 and received a Certificate of Appreciation. Contributed to engineering and student-led technical initiatives.</div>
 </div>
 <div class="event">
-<h3>Industrial Training</h3>
-<p>Vocational exposure at ITC Limited, Haridwar, and UPSRTC, Agra.</p>
+<button aria-expanded="false">Industrial Training — ITC & UPSRTC ＋</button>
+<div class="detail">Studied industrial production, machinery, preventive maintenance, engine overhauling and mechanical systems through vocational training.</div>
 </div>
 </div>
 </section>
 
-<section id="experience">
-<h2>Industrial Experience</h2>
-<p class="sub">Practical exposure to engineering operations and maintenance.</p>
+<section id="experience" class="reveal">
+<h2>Industrial Exposure</h2>
+<p class="subtitle">Learning from real engineering operations.</p>
 <div class="grid">
-<article class="card">
-<h3>ITC Limited</h3>
-<span class="tag">Haridwar</span>
-<span class="tag">Vocational Trainee</span>
-<p>Studied automated soap production lines, mechanical drives, conveyors and packaging machinery.</p>
-<details>
-<summary>Explore Training</summary>
-<p>Analyzed preventive maintenance of centrifugal pumps and steam piping and documented standard operating procedures.</p>
-</details>
-</article>
-<article class="card">
-<h3>UPSRTC</h3>
-<span class="tag">Agra</span>
-<span class="tag">Vocational Trainee</span>
-<p>Observed diesel engine, transmission and steering overhauls, along with pneumatic brake systems.</p>
-<details>
-<summary>Explore Training</summary>
-<p>Logged breakdown patterns in Excel to categorize failure modes and support servicing analysis.</p>
-</details>
-</article>
+<div class="card">
+<span class="pill">Vocational Trainee</span>
+<h3>ITC Limited — Haridwar</h3>
+<p>Studied automated soap production lines, conveyors, drives and packaging machinery.</p>
+<p>Analyzed preventive maintenance of centrifugal pumps and steam piping, and documented SOPs.</p>
+</div>
+<div class="card">
+<span class="pill">Vocational Trainee</span>
+<h3>UPSRTC — Agra</h3>
+<p>Observed overhaul of diesel engines, transmissions and steering systems, and evaluated pneumatic brakes.</p>
+<p>Used Excel to categorize breakdown patterns and failure modes.</p>
+</div>
 </div>
 </section>
 
-<section id="projects">
-<h2>Engineering Projects</h2>
-<p class="sub">Select a project to explore its engineering work.</p>
-<div class="grid">
-<article class="card">
+<section id="projects" class="reveal">
+<h2>Engineering Project Explorer</h2>
+<p class="subtitle">Filter by engineering discipline and open a technical project brief.</p>
+<div class="filters" id="projectFilters">
+<button class="filter active" data-filter="all">All Projects</button>
+<button class="filter" data-filter="cad">CAD / Design</button>
+<button class="filter" data-filter="cfd">CFD</button>
+<button class="filter" data-filter="thermal">Thermal</button>
+</div>
+<div class="grid" id="projectGrid">
+<article class="card project" data-category="cad thermal" data-project="heat">
+<span class="pill">SolidWorks</span><span class="pill">Thermal</span>
 <h3>Air Conditioner Heat Exchanger</h3>
-<span class="tag">SolidWorks</span>
-<span class="tag">Thermal Design</span>
-<p>Fin-and-tube heat exchanger design with copper tubes and aluminum fins.</p>
-<details>
-<summary>Technical Details</summary>
-<p>Designed coil geometry to increase heat-transfer area and evaluated boundary-flow conditions to reduce airflow resistance and pressure drop.</p>
-</details>
+<p>Fin-and-tube coil design with copper tubes and aluminum fins.</p>
+<button class="more" data-open="heat">Explore Technical Details →</button>
 </article>
-
-<article class="card">
+<article class="card project" data-category="cfd" data-project="nozzle">
+<span class="pill">ANSYS Fluent</span><span class="pill">CFD</span>
 <h3>Convergent-Divergent Nozzle</h3>
-<span class="tag">ANSYS Fluent</span>
-<span class="tag">CFD</span>
-<p>Supersonic flow and Mach number investigation using parametric nozzle models.</p>
-<details>
-<summary>Technical Details</summary>
-<p>Created 2D and 3D geometries and simulated velocity vectors, pressure distributions, Mach contours and shock formation.</p>
-</details>
+<p>Supersonic flow, pressure variation, Mach contours and shock formation.</p>
+<button class="more" data-open="nozzle">Explore Technical Details →</button>
 </article>
-
-<article class="card">
+<article class="card project" data-category="cad" data-project="governor">
+<span class="pill">SolidWorks</span><span class="pill">Dynamics</span>
 <h3>Hartnell Governor</h3>
-<span class="tag">SolidWorks</span>
-<span class="tag">Mechanisms</span>
-<p>Dynamic modeling and assembly analysis of a spring-loaded centrifugal governor.</p>
-<details>
-<summary>Technical Details</summary>
-<p>Modeled levers, flyballs and sleeve with kinematic constraints and evaluated equilibrium speed and sleeve travel over RPM ranges.</p>
-</details>
+<p>Dynamic modeling and kinematic assembly of a centrifugal governor.</p>
+<button class="more" data-open="governor">Explore Technical Details →</button>
 </article>
-
-<article class="card">
+<article class="card project" data-category="cad" data-project="bicycle">
+<span class="pill">SolidWorks</span><span class="pill">Materials</span>
 <h3>Ergonomic Bicycle Frame</h3>
-<span class="tag">SolidWorks</span>
-<span class="tag">Design</span>
-<p>Frame design emphasizing rider ergonomics, material selection and structural rigidity.</p>
-<details>
-<summary>Technical Details</summary>
-<p>Studied rider posture, clearances, load transfer paths and sustainable material alternatives.</p>
-</details>
+<p>Frame design, rider ergonomics and material optimization.</p>
+<button class="more" data-open="bicycle">Explore Technical Details →</button>
 </article>
 </div>
 </section>
 
-<section id="skills">
-<h2>Technical Skills</h2>
-<p class="sub">Engineering software, industrial systems and professional competencies.</p>
-<div class="grid">
-<div class="card">
-<h3>CAD & Modeling</h3>
-<span class="tag">SolidWorks</span>
-<span class="tag">AutoCAD</span>
-<span class="tag">GD&T</span>
+<section id="skills" class="reveal">
+<h2>Technical Competencies</h2>
+<p class="subtitle">Select a category to explore my technical background.</p>
+<div class="filters" id="skillFilters">
+<button class="filter active" data-skill="design">Design</button>
+<button class="filter" data-skill="simulation">Simulation</button>
+<button class="filter" data-skill="industrial">Industrial</button>
+<button class="filter" data-skill="professional">Professional</button>
 </div>
 <div class="card">
-<h3>CAE & Simulation</h3>
-<span class="tag">ANSYS Fluent</span>
-<span class="tag">ANSYS Mechanical</span>
-<span class="tag">Static Stress</span>
-<span class="tag">Compressible Flow</span>
+<div class="skill-panel active" id="skill-design">
+<h3>CAD & Mechanical Design</h3>
+<div class="skill-item">SolidWorks — Part and Assembly Design</div>
+<div class="skill-item">AutoCAD — 2D Drafting</div>
+<div class="skill-item">Geometric Dimensioning & Tolerancing</div>
 </div>
-<div class="card">
-<h3>Industrial Engineering</h3>
-<span class="tag">Pneumatics</span>
-<span class="tag">Pumps & Piping</span>
-<span class="tag">Preventive Maintenance</span>
-<span class="tag">Root Cause Analysis</span>
+<div class="skill-panel" id="skill-simulation">
+<h3>CAE & Numerical Simulation</h3>
+<div class="skill-item">ANSYS Fluent — Compressible Flow</div>
+<div class="skill-item">ANSYS Mechanical — Static Stress</div>
+<div class="skill-item">Factor of Safety Evaluation</div>
 </div>
-<div class="card">
-<h3>Professional Tools</h3>
-<span class="tag">MS Excel</span>
-<span class="tag">Cost Estimation</span>
-<span class="tag">Team Leadership</span>
+<div class="skill-panel" id="skill-industrial">
+<h3>Industrial Systems</h3>
+<div class="skill-item">Pneumatics and Pumps</div>
+<div class="skill-item">Piping and Preventive Maintenance</div>
+<div class="skill-item">Root Cause Analysis</div>
+</div>
+<div class="skill-panel" id="skill-professional">
+<h3>Professional Competencies</h3>
+<div class="skill-item">MS Excel, Word and PowerPoint</div>
+<div class="skill-item">Cost Estimation</div>
+<div class="skill-item">Team Leadership</div>
 </div>
 </div>
 </section>
 
-<section id="leadership">
-<h2>Leadership & Achievements</h2>
+<section id="leadership" class="reveal">
+<h2>Leadership & Recognition</h2>
 <div class="grid">
 <div class="card">
 <h3>Mercenary Motorsports Club</h3>
-<p>Senior Team Lead and Head of Powertrain. Worked on transmission layout, mounting rigidity, drive ratios and cooling using SolidWorks.</p>
+<p>Senior Team Lead and Head of Powertrain. Worked on transmission layout, mounting rigidity, drive ratios and cooling.</p>
 </div>
 <div class="card">
 <h3>Solarpunk Corps Club</h3>
-<p>Sustainable Development Head. Contributed to sustainable materials and lightweight robotics frame evaluation.</p>
+<p>Sustainable Development Head. Evaluated sustainable materials and lightweight robotics frames.</p>
 </div>
 <div class="card">
-<h3>Recognition</h3>
-<p>Mr. Spandan title winner at the Mechanical Engineering Forum, BIET Jhansi.</p>
-<p>Second Runner-Up at AEROWORKS 3.0.</p>
+<h3>Achievements</h3>
+<p>Mr. Spandan title winner, Mechanical Engineering Forum, BIET.</p>
+<p>Second Runner-Up, AEROWORKS 3.0.</p>
 </div>
 </div>
 </section>
 
-<section id="certifications">
+<section id="certifications" class="reveal">
 <h2>Certifications & Activities</h2>
 <div class="card">
-<p><strong>Ignite India</strong> — Wadhwani Foundation, 42 hours, April 2026.</p>
-<p><strong>Manak Utsav 2025</strong> — Event Coordinator, BIS collaboration.</p>
-<p><strong>Horizon 1.0</strong> — Organizer, Solarpunk Corps, March 2026.</p>
-<p><strong>Mech-Motion Workshop</strong> — Certificate of Appreciation.</p>
+<p><strong>Ignite India:</strong> Wadhwani Foundation — 42 hours, April 2026.</p>
+<p><strong>Manak Utsav 2025:</strong> Event Coordinator, BIS collaboration.</p>
+<p><strong>Horizon 1.0:</strong> Organizer, Solarpunk Corps, March 2026.</p>
+<p><strong>Mech-Motion Workshop:</strong> Certificate of Appreciation.</p>
 </div>
 </section>
 
-<section id="contact">
-<h2>Connect With Me</h2>
-<p class="sub">Open to relevant core mechanical engineering opportunities.</p>
+<section id="contact" class="reveal">
+<h2>Recruitment & Contact</h2>
+<p class="subtitle">Interested in Graduate Engineer Trainee opportunities in core mechanical engineering.</p>
 <div class="card">
-<p>Explore my professional background or contact me for recruitment opportunities.</p>
+<h3>Let's Connect</h3>
+<p>Explore my experience, review my engineering projects or contact me about relevant recruitment opportunities.</p>
 <div class="actions">
-<a class="btn" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a class="btn" href="mailto:krishnamathur00001@gmail.com">Email Me</a>
-<a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">View Resume PDF</a>
+<a class="btn" href="https://www.linkedin.com/in/krishna-mathur-a73536287" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+<a class="btn" href="mailto:krishnamathur00001@gmail.com">Email Me ↗</a>
+<a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">View Resume PDF ↗</a>
 </div>
-<p><small>Note: The resume PDF button will work after resume.pdf is uploaded to this GitHub repository.</small></p>
+<p style="font-size:12px">The PDF button requires a file named resume.pdf in the repository root.</p>
 </div>
 </section>
 </main>
 
+<a class="floating" href="#contact">Contact ↗</a>
+
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+<div class="dialog">
+<button class="close" id="closeModal" aria-label="Close project details">✕</button>
+<h2 id="modalTitle"></h2>
+<div id="modalContent"></div>
+</div>
+</div>
+
 <footer>
 <strong>Krishna Mathur</strong>
 <p>Mechanical Engineering | BIET Jhansi | 2027</p>
-<p>© 2026 Krishna Mathur</p>
+<p><a href="https://www.linkedin.com/in/krishna-mathur-a73536287">LinkedIn</a> • <a href="mailto:krishnamathur00001@gmail.com">Email</a></p>
+<small>© 2026 Krishna Mathur</small>
 </footer>
+
+<script>
+const projectData={
+heat:{
+ title:"Air Conditioner Heat Exchanger",
+ html:`<p><strong>Software:</strong> SolidWorks</p>
+ <p><strong>Objective:</strong> Design a fin-and-tube heat exchanger with enhanced heat-transfer area.</p>
+ <p><strong>Engineering work:</strong> Modeled copper tubes and aluminum fins, and evaluated boundary-flow conditions to reduce airflow resistance and pressure drop.</p>
+ <p><strong>Focus:</strong> Heat transfer, geometry and airflow considerations.</p>`
+},
+nozzle:{
+ title:"Convergent-Divergent Nozzle",
+ html:`<p><strong>Software:</strong> ANSYS Fluent</p>
+ <p><strong>Objective:</strong> Investigate compressible flow through a convergent-divergent nozzle.</p>
+ <p><strong>Engineering work:</strong> Created parametric 2D and 3D models and examined velocity vectors, pressure distributions, Mach contours and shock formation.</p>
+ <p><strong>Focus:</strong> Supersonic flow and CFD interpretation.</p>`
+},
+governor:{
+ title:"Hartnell Governor",
+ html:`<p><strong>Software:</strong> SolidWorks</p>
+ <p><strong>Objective:</strong> Model a spring-loaded centrifugal governor assembly.</p>
+ <p><strong>Engineering work:</strong> Applied kinematic constraints to levers, flyballs and sleeve, and evaluated equilibrium speeds and sleeve travel across RPM ranges.</p>
+ <p><strong>Focus:</strong> Mechanism design and stability.</p>`
+},
+bicycle:{
+ title:"Ergonomic Bicycle Frame",
+ html:`<p><strong>Software:</strong> SolidWorks</p>
+ <p><strong>Objective:</strong> Develop an ergonomic frame with suitable structural rigidity.</p>
+ <p><strong>Engineering work:</strong> Examined rider posture, frame clearances, load transfer paths and sustainable material alternatives to steel and aluminum.</p>
+ <p><strong>Focus:</strong> Ergonomics, structural design and material selection.</p>`
+}
+};
+
+const themeBtn=document.getElementById("themeBtn");
+try{
+ if(localStorage.getItem("km-theme")==="dark")
+ document.body.classList.add("dark");
+}catch(e){}
+themeBtn.addEventListener("click",()=>{
+ document.body.classList.toggle("dark");
+ try{localStorage.setItem("km-theme",document.body.classList.contains("dark")?"dark":"light")}catch(e){}
+});
+
+const phrases=[
+ "Mechanical Engineering Undergraduate",
+ "CAD & Mechanical Design",
+ "Industrial Training & Maintenance",
+ "Computational Fluid Dynamics",
+ "Aspiring Graduate Engineer Trainee"
+];
+let phraseIndex=0;
+const typing=document.getElementById("typing");
+setInterval(()=>{
+ phraseIndex=(phraseIndex+1)%phrases.length;
+ typing.textContent=phrases[phraseIndex];
+},2600);
+
+document.querySelectorAll("#projectFilters .filter").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+ document.querySelectorAll("#projectFilters .filter").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ const filter=btn.dataset.filter;
+ document.querySelectorAll(".project").forEach(card=>{
+ card.hidden=filter!=="all"&&!card.dataset.category.split(" ").includes(filter);
+ });
+ });
+});
+
+document.querySelectorAll("#skillFilters .filter").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+ document.querySelectorAll("#skillFilters .filter").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ document.querySelectorAll(".skill-panel").forEach(p=>p.classList.remove("active"));
+ document.getElementById("skill-"+btn.dataset.skill).classList.add("active");
+ });
+});
+
+document.querySelectorAll(".event button").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+ const event=btn.parentElement;
+ const open=event.classList.toggle("open");
+ btn.setAttribute("aria-expanded",String(open));
+ });
+});
+
+const modal=document.getElementById("projectModal");
+const closeModal=document.getElementById("closeModal");
+let lastFocus=null;
+function hideModal(){
+ modal.classList.remove("show");
+ modal.setAttribute("aria-hidden","true");
+ document.body.style.overflow="";
+ if(lastFocus)lastFocus.focus();
+}
+document.querySelectorAll("[data-open]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+ const data=projectData[btn.dataset.open];
+ if(!data)return;
+ lastFocus=btn;
+ document.getElementById("modalTitle").textContent=data.title;
+ document.getElementById("modalContent").innerHTML=data.html;
+ modal.classList.add("show");
+ modal.setAttribute("aria-hidden","false");
+ document.body.style.overflow="hidden";
+ closeModal.focus();
+ });
+});
+closeModal.addEventListener("click",hideModal);
+modal.addEventListener("click",e=>{if(e.target===modal)hideModal()});
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"&&modal.classList.contains("show"))hideModal();
+ if(e.key==="Tab"&&modal.classList.contains("show")){
+ const focusable=Array.from(modal.querySelectorAll("button,a[href]"));
+ const first=focusable[0],last=focusable[focusable.length-1];
+ if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+ else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+ if(!entry.isIntersecting)return;
+ entry.target.classList.add("visible");
+ if(entry.target.classList.contains("stats")){
+ entry.target.querySelectorAll("[data-count]").forEach(el=>{
+ const target=Number(el.dataset.count);
+ if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+ el.textContent=target;return;
+ }
+ let n=0;
+ const timer=setInterval(()=>{
+ n++;el.textContent=n;
+ if(n>=target)clearInterval(timer);
+ },130);
+ });
+ }
+ observer.unobserve(entry.target);
+ });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>
+
